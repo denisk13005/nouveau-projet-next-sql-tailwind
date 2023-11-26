@@ -4,6 +4,8 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 
+import styles from './styles.module.scss'
+
 
 
 function Form() {
@@ -48,15 +50,14 @@ function Form() {
   }
   return (
 
-    <div className=' w-full h-full h flex justify-center items-center bg-slate-950 '  >
+    <div className=' w-full h-full h flex justify-center items-center  '  >
 
 
       <Box
         component="form"
         noValidate
         autoComplete="off"
-        className='w-max  h-[450px] p-8 mt-12 m-auto  flex flex-col items-center justify-around shadow-yellow-200 shadow-inner   rounded-xl bg-slate-200'
-      >
+        className={`w-max  h-[450px] p-8 mt-12 m-auto  flex flex-col items-center justify-around  shadow-inner   rounded-xl bg-[var(--blue)] text-[var(--turquoise)] ${styles.container}`}      >
 
         {!signup ? <h1 className='text-2xl '>Sign In</h1> : <h1 className='text-2xl '>Sign Up</h1>}
         {
@@ -74,7 +75,7 @@ function Form() {
 
 
 
-        <Button variant="outlined" className='w-[80%]' onClick={action}>{!signup ? <span>Sign In</span> : <span>Sign Up</span>}</Button>
+        <Button className={`w-[80%] ${styles.btn}`} onClick={action}>{!signup ? <span>Sign In</span> : <span>Sign Up</span>}</Button>
         {
           !signup ? <p style={{ cursor: 'pointer' }} onClick={() => setSignup(true)}>I don t have an account : SignUp</p> : <p style={{ cursor: 'pointer' }} onClick={() => setSignup(false)}>I have an account : SignIn</p>
         }

@@ -7,6 +7,8 @@ import Avatar from '@mui/material/Avatar';
 import Fade from '@mui/material/Fade';
 import Link from 'next/link';
 
+import styles from './styles.module.scss'
+
 export default function FadeMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -26,6 +28,7 @@ export default function FadeMenu() {
           aria-controls={open ? 'fade-menu' : undefined}
           aria-haspopup="true"
           aria-expanded={open ? 'true' : undefined}
+          className={styles.btn}
           onClick={handleClick}
         >
           Dashboard
@@ -54,7 +57,7 @@ export default function FadeMenu() {
         </Menu>
       </div>
 
-      <Avatar className='cursor-pointer' alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
+      <Avatar className={styles.avatar} alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
 
     </div>
   );

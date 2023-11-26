@@ -2,3 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --or : #BFA181;
+  --turquoise : #178582 ;
+  --blue : rgb(10,24,40);
+  --main-bg-color: linear-gradient(170deg, rgba(10,24,40,1) 83%, #178582 100%);
+}
