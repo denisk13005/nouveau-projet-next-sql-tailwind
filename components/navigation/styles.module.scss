@@ -1,14 +1,14 @@
-.btn {
+#btn {
   color : var(--or);
   border : 1px  solid var(--or);
   box-shadow: 1px -1px 5px  var(--or);
   transition: all 0.2s;
   
-}
-.btn:hover {
-  color :var(--turquoise);
-  border : 1px  solid var(--turquoise);
-  box-shadow: 1px -1px 5px  var(--turquoise);
+  &:hover {
+    color :var(--turquoise);
+    border : 1px  solid var(--turquoise);
+    box-shadow: 1px -1px 5px  var(--turquoise);
+  }
 }
 #avatar {
   background: transparent;

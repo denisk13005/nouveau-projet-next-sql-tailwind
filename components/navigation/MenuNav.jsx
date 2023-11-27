@@ -24,11 +24,10 @@ export default function FadeMenu() {
       <div>
 
         <Button
-
+          id={styles.btn}
           aria-controls={open ? 'fade-menu' : undefined}
           aria-haspopup="true"
           aria-expanded={open ? 'true' : undefined}
-          className={styles.btn}
           onClick={handleClick}
         >
           Dashboard
