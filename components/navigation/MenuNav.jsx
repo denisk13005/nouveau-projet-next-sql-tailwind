@@ -57,7 +57,7 @@ export default function FadeMenu() {
         </Menu>
       </div>
 
-      <Avatar className={styles.avatar} alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
+      <Avatar style={{ color: 'red' }} className={styles.avatar} alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
 
     </div>
   );
