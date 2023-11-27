@@ -57,7 +57,7 @@ function Form() {
         component="form"
         noValidate
         autoComplete="off"
-        className={`w-max  h-[450px] p-8 mt-12 m-auto  flex flex-col items-center justify-around  shadow-inner   rounded-xl bg-[var(--blue)] text-[var(--turquoise)] ${styles.container}`}      >
+        className={`w-max  h-[450px] p-8 mt-12 m-auto  flex flex-col items-center justify-around  shadow-inner bg-[white] rounded-xl  ${styles.container}`}      >
 
         {!signup ? <h1 className='text-2xl '>Sign In</h1> : <h1 className='text-2xl '>Sign Up</h1>}
         {

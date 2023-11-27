@@ -4,7 +4,7 @@
 
 :root {
   --or : #BFA181;
-  --turquoise : #178582 ;
+  --turquoise : rgb(23, 135, 131);
   --blue : rgb(10,24,40);
   --main-bg-color: linear-gradient(170deg, rgba(10,24,40,1) 83%, #178582 100%);
 }
