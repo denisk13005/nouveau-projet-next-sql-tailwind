@@ -15,6 +15,7 @@ import FormControl from '@mui/material/FormControl';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { set } from 'react-hook-form';
+import { Roboto } from 'next/font/google';
 
 
 
@@ -44,10 +45,14 @@ function Form() {
           body: JSON.stringify(data)
         })
       const user = await response.json()
-      console.log(user);
+      if (user.status === 200) {
+        console.log(user.newUser);
+        setSignup(false)
+        console.log(data);
+      }
     } else if (!signup) {
       console.log('titi');
-      const response = await fetch('/api/users/sign',
+      const response = await fetch('/api/users/signIn',
         {
           method: 'POST',
           body: JSON.stringify(data)
@@ -89,10 +94,10 @@ function Form() {
           }
         </div>
 
-        <TextField id="outlined-basic" type='password' label="password" variant="outlined" onChange={(e) => setData({ ...data, password: e.target.value })} />
         <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
           <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
           <OutlinedInput
+            onChange={(e) => setData({ ...data, password: e.target.value })}
             id="outlined-adornment-password"
             type={showPassword ? 'text' : 'password'}
             endAdornment={
