@@ -62,7 +62,7 @@ export default function FadeMenu() {
         </Menu>
       </div>
 
-      <Avatar id={styles.avatar} alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
+      <Avatar id={styles.avatar} alt="P" src="/static/images/avatar/3.jpg" />
 
     </div>
   );

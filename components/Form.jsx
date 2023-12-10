@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 
 import { useRouter } from 'next/navigation'
 
+import { useUserContext } from '@/context/UserContext';
+
 
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
@@ -22,6 +24,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 
 function Form() {
+  const { user, addUser } = useUserContext()
   const router = useRouter()
   const inputStyles = {
     '&:hover fieldset': {
@@ -70,8 +73,8 @@ function Form() {
       )
       const user = await response.json()
       if (user.status === 200) {
+        addUser(user.user)
         router.push('/profile')
-        alert(`welcome ${user.user.pseudo} `)
       }
 
     }
