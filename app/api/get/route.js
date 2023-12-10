@@ -11,7 +11,6 @@ export async function POST(request) {
 
     connection.connect()
     connection.query(`INSERT INTO users (pseudo,email, password) VALUES ('pseudo','${email}', '${password}')`)
-    connection.end()
   } catch (error) {
     console.log(error);
   }

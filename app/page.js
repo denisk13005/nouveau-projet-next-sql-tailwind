@@ -1,10 +1,9 @@
-import Image from 'next/image'
-import Form from "@/components/Form.jsx"
+import Form from "@/components/auth/Form.jsx"
 
 export default function Home() {
   return (
     <main className='w-full  relative ' >
-      <Form />
+      <h1 className="text-center p-10 text-6xl">Bienvenue sur apprendre en s&#39;amusant</h1>
     </main>
   )
 }

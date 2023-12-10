@@ -6,12 +6,14 @@ import MenuItem from '@mui/material/MenuItem';
 import Avatar from '@mui/material/Avatar';
 import Fade from '@mui/material/Fade';
 import Link from 'next/link';
+import { UseUserContext } from '@/context/UserContext';
 
 import styles from './styles.module.scss'
 
 
 
 export default function FadeMenu() {
+  const { user } = UseUserContext()
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -47,14 +49,36 @@ export default function FadeMenu() {
           <Link href={'/'}>
             <MenuItem onClick={handleClose}>Home</MenuItem>
           </Link>
-          <Link href={"/profile"}>
+          {
+            user ?
 
-            <MenuItem onClick={handleClose}>Profile</MenuItem>
-          </Link>
-          <Link href={'settings'}>
+              <Link href={"/profile"}>
 
-            <MenuItem onClick={handleClose}>Settings</MenuItem>
-          </Link>
+                <MenuItem onClick={handleClose}>Profile</MenuItem>
+              </Link>
+              :
+              <Link href={"/auth"}>
+
+                <MenuItem onClick={handleClose}>Profile</MenuItem>
+              </Link>
+
+
+          }
+          {
+            user
+              ?
+              <Link href={'/settings'}>
+
+                <MenuItem onClick={handleClose}>Settings</MenuItem>
+              </Link>
+
+              :
+              <Link href={'/auth'}>
+
+                <MenuItem onClick={handleClose}>Settings</MenuItem>
+              </Link>
+          }
+
           <Link href={'/videos'}>
 
             <MenuItem onClick={handleClose}>Videos</MenuItem>

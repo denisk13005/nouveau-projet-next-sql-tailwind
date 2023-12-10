@@ -24,16 +24,9 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 
 function Form() {
-  const { user, addUser } = UseUserContext()
+  const { addUser } = UseUserContext()
   const router = useRouter()
-  const inputStyles = {
-    '&:hover fieldset': {
-      borderColor: 'green', // Couleur de l'underline lors du hover
-    },
-    '&.Mui-focused fieldset': {
-      borderColor: 'green', // Couleur de l'underline après le focus
-    },
-  };
+
   const [data, setData] = useState({
     email: "",
     pseudo: '',

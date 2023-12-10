@@ -30,7 +30,6 @@ async function insertUser(pseudo, email, password) {
     const result = await queryAsync(query);
     return { id: result.insertId, pseudo, email }; // Retourner les informations de l'utilisateur inséré
   } finally {
-    connection.end();
   }
 }
 
