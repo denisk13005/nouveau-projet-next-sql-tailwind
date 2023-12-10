@@ -1,9 +1,9 @@
 'use client'
 import React from 'react'
-import { useUserContext } from '@/context/UserContext'
+import { UseUserContext } from '@/context/UserContext'
 
 export default function profile() {
-  const { user } = useUserContext()
+  const { user } = UseUserContext()
   return (
     <div>
 

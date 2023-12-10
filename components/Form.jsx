@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 
 import { useRouter } from 'next/navigation'
 
-import { useUserContext } from '@/context/UserContext';
+import { UseUserContext } from '@/context/UserContext';
 
 
 import Button from '@mui/material/Button';
@@ -24,7 +24,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 
 function Form() {
-  const { user, addUser } = useUserContext()
+  const { user, addUser } = UseUserContext()
   const router = useRouter()
   const inputStyles = {
     '&:hover fieldset': {

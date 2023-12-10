@@ -7,4 +7,4 @@ export const UserContext = createContext({
   setUser(user) { },
 });
 
-export const useUserContext = () => useContext(UserContext);
+export const UseUserContext = () => useContext(UserContext);
