@@ -1,26 +1,36 @@
 'use client'
 import React, { useEffect, useState } from 'react'
+
+import { useRouter } from 'next/navigation'
+
+
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import IconButton from '@mui/material/IconButton';
 
 import styles from './styles.module.scss'
-import FilledInput from '@mui/material/FilledInput';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import InputLabel from '@mui/material/InputLabel';
 import InputAdornment from '@mui/material/InputAdornment';
-import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import { set } from 'react-hook-form';
-import { Roboto } from 'next/font/google';
+
 
 
 
 
 function Form() {
+  const router = useRouter()
+  const inputStyles = {
+    '&:hover fieldset': {
+      borderColor: 'green', // Couleur de l'underline lors du hover
+    },
+    '&.Mui-focused fieldset': {
+      borderColor: 'green', // Couleur de l'underline après le focus
+    },
+  };
   const [data, setData] = useState({
     email: "",
     pseudo: '',
@@ -59,7 +69,10 @@ function Form() {
         }
       )
       const user = await response.json()
-      console.log(user);
+      if (user.status === 200) {
+        router.push('/profile')
+        alert(`welcome ${user.user.pseudo} `)
+      }
 
     }
 
@@ -71,6 +84,7 @@ function Form() {
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
+
   return (
 
     <div className=' w-full h-full h flex justify-center items-center  '  >
@@ -84,11 +98,11 @@ function Form() {
 
         {!signup ? <h1 className='text-2xl '>Sign In</h1> : <h1 className='text-2xl '>Sign Up</h1>}
         {
-          signup ? <TextField id="outlined-basic" label="pseudo" variant="outlined" onChange={(e) => setData({ ...data, pseudo: e.target.value })} /> : null
+          signup ? <TextField label="pseudo" variant="outlined" onChange={(e) => setData({ ...data, pseudo: e.target.value })} /> : null
         }
         <div style={{ display: 'flex', flexDirection: 'column' }}>
 
-          <TextField id="outlined-basic" label="email" variant="outlined" type='email' onChange={(e) => setData({ ...data, email: e.target.value })} />
+          <TextField label="email" variant="outlined" type='email' onChange={(e) => setData({ ...data, email: e.target.value })} />
           {
             emailError ? <span style={{ paddingLeft: '5px', color: 'red' }}> erreur </span> : null
           }

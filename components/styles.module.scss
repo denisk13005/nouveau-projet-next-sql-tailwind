@@ -6,3 +6,6 @@
   color : var(--turquoise)
 
 }
+.myTextField.Mui-focused fieldset {
+  border-color: red; /* Couleur de l'underline après le focus */
+}

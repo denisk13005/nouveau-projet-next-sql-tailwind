@@ -55,6 +55,10 @@ export default function FadeMenu() {
 
             <MenuItem onClick={handleClose}>Settings</MenuItem>
           </Link>
+          <Link href={'/videos'}>
+
+            <MenuItem onClick={handleClose}>Videos</MenuItem>
+          </Link>
         </Menu>
       </div>
 

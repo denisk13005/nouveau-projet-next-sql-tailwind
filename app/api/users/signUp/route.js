@@ -21,7 +21,6 @@ async function checkExistingUser(email) {
     console.error('Erreur lors de l\'exécution de la requête :', error);
     throw error;
   } finally {
-    // Ne pas appeler connection.end() ici pour éviter de fermer la connexion prématurément
   }
 }
 
@@ -38,7 +37,6 @@ async function insertUser(pseudo, email, password) {
 export async function POST(request) {
   try {
     const { pseudo, email, password } = await request.json();
-    console.log(password, '((((((');
     const motDePasseCrypte = await bcrypt.hash(password, 10);
     let ps
     if (pseudo.length) {
