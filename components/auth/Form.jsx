@@ -76,7 +76,7 @@ function Form() {
 
       if (user.status === 200) {
         addUser(user.user)
-        router.push('/Profile')
+        router.push('/profile')
       }
 
     }
