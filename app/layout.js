@@ -20,7 +20,10 @@ export default function RootLayout({ children }) {
           <nav className={`w-full h-[8vh]  flex items-center ${styles.navBar}`}>
             <MenuNav />
           </nav>
-          {children}
+          <main className={``}>
+
+            {children}
+          </main>
 
         </body>
       </UserContextProvider>

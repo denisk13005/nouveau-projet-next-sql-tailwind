@@ -2,7 +2,24 @@
   background: var(--main-bg-color);
   height: 100vh;
   color: var(--or);
+  main{
+    max-width: 1440px;
+    margin: auto;
+    min-height: calc(100vh - 8vh);
+  }
 }
 .navBar {
   box-shadow:  0px 2px 5px var(--or) ;
+}
+.page {
+  padding: 50px;
+  h1{
+    font-size: 64px;
+  }
+  @media screen and (max-width : 450px) {
+    h1{
+      font-size : 24px
+    }
+
+  }
 }
