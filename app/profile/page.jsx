@@ -1,6 +1,6 @@
 
-import Profil from '@/components/profil/Profil'
 import React from 'react'
+import Profil from '@/components/profil/Profil'
 
 
 export default function profile() {

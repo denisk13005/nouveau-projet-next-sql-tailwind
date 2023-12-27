@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation'
 const Profil = () => {
   const router = useRouter()
   const { user } = UseUserContext()
-  if (!user) router.push('/auth')
+  // if (!user) router.push('/auth')
 
   return (
     <div>
