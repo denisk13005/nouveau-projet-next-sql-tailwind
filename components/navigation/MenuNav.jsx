@@ -52,7 +52,7 @@ export default function FadeMenu() {
           {
             user ?
 
-              <Link href={"/profile"}>
+              <Link href={"/Profile"}>
 
                 <MenuItem onClick={handleClose}>Profile</MenuItem>
               </Link>
@@ -86,7 +86,7 @@ export default function FadeMenu() {
           </Link>
         </Menu>
       </div>
-      <Link href={'/profile'}>
+      <Link href={'/Profile'}>
 
         <Avatar id={styles.avatar} alt={user && user.pseudo.split('')[0].toUpperCase()} src="/static/images/avatar/3.jpg" />
       </Link>

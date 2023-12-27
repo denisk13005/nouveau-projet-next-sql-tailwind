@@ -3,7 +3,7 @@ import React from 'react'
 import { UseUserContext } from '@/context/UserContext'
 import { useRouter } from 'next/navigation'
 
-export default function profile() {
+export default function Profile() {
   const router = useRouter()
   const { user } = UseUserContext()
   if (!user) router.push('/auth')
