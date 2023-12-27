@@ -1,16 +1,16 @@
-'use client'
-import React from 'react'
-import { UseUserContext } from '@/context/UserContext'
-import { useRouter } from 'next/navigation'
 
-export default function Profile() {
-  const router = useRouter()
-  const { user } = UseUserContext()
-  if (!user) router.push('/auth')
+import Profil from '@/components/profil/Profil'
+import React from 'react'
+
+
+export default function profile() {
+
+
   return (
     <div>
+      <Profil />
 
-      <h1 className="text-center text-4xl capitalize p-10">profil {user && user.pseudo}</h1>
+
     </div>
   )
 }
