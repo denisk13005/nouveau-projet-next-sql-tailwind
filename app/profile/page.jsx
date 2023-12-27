@@ -3,10 +3,10 @@ import React from 'react'
 import { UseUserContext } from '@/context/UserContext'
 import { useRouter } from 'next/navigation'
 
-export default function Profile() {
-  const router = useRouter()
+export default function profile() {
+  // const router = useRouter()
   const { user } = UseUserContext()
-  if (!user) router.push('/auth')
+  // if (!user) router.push('/auth')
   return (
     <div>
 
