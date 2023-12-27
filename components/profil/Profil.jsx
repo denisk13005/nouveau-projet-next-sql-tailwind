@@ -1,13 +1,19 @@
 'use client'
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { UseUserContext } from '@/context/UserContext'
 import { useRouter } from 'next/navigation'
 
 const Profil = () => {
   const router = useRouter()
   const { user } = UseUserContext()
-  // if (!user) router.push('/auth')
+  useEffect(() => {
+    console.log(user);
+    if (user === null) {
+      router.push('/auth')
+
+    }
+  }, [router, user])
 
   return (
     <div>
