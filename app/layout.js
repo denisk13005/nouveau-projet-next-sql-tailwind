@@ -1,13 +1,13 @@
-import './globals.css'
 import MenuNav from '@/components/navigation/MenuNav'
-import styles from './layout.module.scss'
 import UserContextProvider from '@/context/userContextProvider'
+import './globals.css'
+import styles from './layout.module.scss'
 
 
 
 export const metadata = {
-  title: 'formation super cool',
-  description: 'formation js , html, css , nextJs',
+  title: 'find a template for starting dev quickly',
+  description: 'This web site provide different template with different technologies for the front end and different type a database',
 }
 
 export default function RootLayout({ children }) {
@@ -16,11 +16,14 @@ export default function RootLayout({ children }) {
 
       <UserContextProvider>
 
-        <body className={`h-full ${styles.body}`}>
+        <body className={` ${styles.body}`}>
           <nav className={`w-full h-[8vh]  flex items-center ${styles.navBar}`}>
             <MenuNav />
           </nav>
-          {children}
+          <main className={``}>
+
+            {children}
+          </main>
 
         </body>
       </UserContextProvider>

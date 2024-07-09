@@ -1,15 +1,29 @@
-'use client'
-import React from 'react'
-import Image from 'next/image'
+import ExosPart from '@/components/exosPart/ExosPart'
+import Link from 'next/link'
+
+import styles from './styles.module.scss'
 
 export default function page() {
   return (
-    <section>
+    <div className={styles.videosMainContainer}>
       <h1>Bienvenue dans notre espace vidéos</h1>
-      <video width="640" height="360" controls >
-        <source src="/video.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
+      <Link href="/exosPartVideos">
+
+
+        <video width="640" height="360" controls autoPlay>
+          <source src="/videos/video.mp4" type="video/mp4" />
+        </video>
+      </Link>
+
+
+      <video width="640" height="360" controls autoPlay>
+        <source src="/videos/nextJsTypescriptMongo.mp4" type="video/mp4" />
+
       </video>
-    </section>
+      <Link href="https://github.com/denisk13005/lpf" target='blank'>
+        link to template
+      </Link>
+      <ExosPart />
+    </div>
   )
 }
