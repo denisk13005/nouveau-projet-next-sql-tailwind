@@ -1,12 +1,11 @@
-import ExosPart from '@/components/exosPart/ExosPart'
-import Link from 'next/link'
 
 import styles from './styles.module.scss'
 
 export default function page() {
   return (
     <div className={styles.videosMainContainer}>
-      <h1>Bienvenue dans notre espace vidéos</h1>
+      comming soon
+      {/* <h1>Bienvenue dans notre espace vidéos</h1>
       <Link href="/exosPartVideos">
 
 
@@ -23,7 +22,7 @@ export default function page() {
       <Link href="https://github.com/denisk13005/lpf" target='blank'>
         link to template
       </Link>
-      <ExosPart />
+      <ExosPart /> */}
     </div>
   )
 }
