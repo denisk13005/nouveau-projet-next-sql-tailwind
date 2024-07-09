@@ -1,13 +1,16 @@
-'use client'
+
 import React from 'react'
-import { UseUserContext } from '@/context/UserContext'
+import Profil from '@/components/profil/Profil'
+
 
 export default function profile() {
-  const { user } = UseUserContext()
+
+
   return (
     <div>
+      <Profil />
 
-      <h1 className="text-center text-4xl capitalize p-10">profile {user && user.pseudo}</h1>
+
     </div>
   )
 }

@@ -34,6 +34,7 @@ function Form() {
   })
   const [signup, setSignup] = useState(false)
   const [emailError, setEmailError] = useState(false)
+  const [emailErrorMsg, setEmailErrorMsg] = useState('')
   useEffect(() => {
     console.log(data);
   }, [data])
@@ -42,7 +43,8 @@ function Form() {
     if (data.email.match(mailformat)) {
       setEmailError(false)
     } else {
-      setEmailError(true)
+      setEmailErrorMsg('bad email format')
+      return
     }
     if (signup) {
       const response = await fetch('/api/users/signUp',
@@ -51,6 +53,11 @@ function Form() {
           body: JSON.stringify(data)
         })
       const user = await response.json()
+      if (user.status === 401) {
+        console.log(user);
+        setEmailErrorMsg('bad credential')
+        return
+      }
       if (user.status === 200) {
         console.log(user.newUser);
         setSignup(false)
@@ -65,6 +72,8 @@ function Form() {
         }
       )
       const user = await response.json()
+      console.log(user, '-------');
+
       if (user.status === 200) {
         addUser(user.user)
         router.push('/profile')
@@ -100,7 +109,7 @@ function Form() {
 
           <TextField label="email" variant="outlined" type='email' onChange={(e) => setData({ ...data, email: e.target.value })} />
           {
-            emailError ? <span style={{ paddingLeft: '5px', color: 'red' }}> erreur </span> : null
+            emailErrorMsg ? <span style={{ paddingLeft: '5px', color: 'red' }}> {emailErrorMsg} </span> : null
           }
         </div>
 

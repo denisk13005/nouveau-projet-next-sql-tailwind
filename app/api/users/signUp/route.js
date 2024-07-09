@@ -46,10 +46,10 @@ export async function POST(request) {
 
     // Vérifier si l'e-mail est déjà utilisé
     const existingUser = await checkExistingUser(email);
-    console.log(existingUser, 'oooo');
+
 
     if (existingUser.length > 0) {
-      return new Response('user exist', { status: 401 });
+      return new Response(JSON.stringify({ msg: 'bad credential', status: 401 }), { status: 401, msg: 'bad credential' });
     } else {
       // Insérer le nouvel utilisateur
       const newUser = await insertUser(ps, email, motDePasseCrypte);

@@ -1,11 +1,8 @@
-import Form from "@/components/auth/Form.jsx"
-import styles from './layout.module.scss'
 
 export default function Home() {
   return (
-    <div className={`w-full  relative ${styles.page} `} >
-      <h1 className={`text-center `} ></h1>
-
-    </div>
+    <main className='w-full  relative ' >
+      <h1 className="text-center p-10 text-6xl">Bienvenue sur apprendre en s&#39;amusant</h1>
+    </main>
   )
 }

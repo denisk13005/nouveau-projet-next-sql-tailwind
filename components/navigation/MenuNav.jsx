@@ -1,14 +1,14 @@
 'use client'
-import * as React from 'react';
+import { UseUserContext } from '@/context/UserContext';
+import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
+import Fade from '@mui/material/Fade';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import Avatar from '@mui/material/Avatar';
-import Fade from '@mui/material/Fade';
 import Link from 'next/link';
-import { UseUserContext } from '@/context/UserContext';
+import * as React from 'react';
 
-import styles from './styles.module.scss'
+import styles from './styles.module.scss';
 
 
 
@@ -56,7 +56,6 @@ export default function FadeMenu() {
 
                 <MenuItem onClick={handleClose}>Profile</MenuItem>
               </Link>
-
               :
               <Link href={"/auth"}>
 
@@ -86,10 +85,8 @@ export default function FadeMenu() {
           </Link>
         </Menu>
       </div>
-      <Link href={'/profile'}>
 
-        <Avatar id={styles.avatar} alt="P" src="/static/images/avatar/3.jpg" />
-      </Link>
+      <Avatar id={styles.avatar} alt="P" src="/static/images/avatar/3.jpg" />
 
     </div>
   );
