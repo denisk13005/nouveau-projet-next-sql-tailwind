@@ -21,7 +21,7 @@ export default function page() {
         link to template
       </Link>
       <ExosPart /> */}
-      <Card />
+      <Card headerText={'NextJs and MongoDb Template'} footerText={'This template use nextJs for the front end and mongoDb with mongoose for the database'} photo1={'/images/next-js.svg'} photo2={'/images/mongodb.svg'} />
       {/* <video width="640" height="360" controls autoPlay>
         <source src="/videos/nextJsTypescriptMongo.mp4" type="video/mp4" />
 
