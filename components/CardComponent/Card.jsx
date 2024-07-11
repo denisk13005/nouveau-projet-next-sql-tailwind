@@ -3,7 +3,7 @@ import Image from "next/image"
 
 export default function Card({ headerText, photo1, photo2, footerText }) {
   return (
-    <div className="w-[33%] h-[350px]   relative cursor-pointer bg-[#BFA181] flex rounded-2xl mt-4 overflow-hidden flex-col justify-center">
+    <div className="w-[90%] h-[350px]   relative cursor-pointer bg-[#BFA181] flex rounded-2xl mt-4 overflow-hidden flex-col justify-center md:w-[50%] lg:w-[33%]">
       <div className=" text-white h-[25%] flex justify-center items-center text-3xl">{headerText}</div>
       <div className="flex w-full h-[50%] items-center">
 
