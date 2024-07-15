@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer/Footer'
 import MenuNav from '@/components/navigation/MenuNav'
 import UserContextProvider from '@/context/userContextProvider'
 import './globals.css'
@@ -16,14 +17,15 @@ export default function RootLayout({ children }) {
 
       <UserContextProvider>
 
-        <body className={` ${styles.body}`}>
+        <body className={styles.body}>
           <nav className={`w-full h-[8vh]  flex items-center ${styles.navBar}`}>
             <MenuNav />
           </nav>
-          <main className={``}>
+          <main className={styles.main}>
 
             {children}
           </main>
+          <Footer />
 
         </body>
       </UserContextProvider>

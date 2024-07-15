@@ -1,11 +1,11 @@
 .body {
-  background: var(--main-bg-color);
+  background: var(--blue);
   height: 100%;
   color: var(--or);
   main{
     max-width: 1440px;
     margin: auto;
-    min-height: calc(100vh - 8vh);
+    min-height: calc(100vh - 12vh);
   }
 }
 .navBar {
