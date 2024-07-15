@@ -22,6 +22,8 @@ export default function page() {
         link to template
       </Link>
       <ExosPart /> */}
+
+
       <Link href={'/nextJs'} className='w-[90%] md:w-[33%]' >
 
         <Card headerText={'NextJs '} footerText={'Here all the templates build with nextJS'} photo1={'/images/next-js.svg'} width1={'100%'} width2={0} />
