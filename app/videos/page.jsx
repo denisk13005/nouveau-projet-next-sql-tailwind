@@ -29,7 +29,7 @@ export default function page() {
         <Card headerText={'NextJs '} footerText={'Here all the templates build with nextJS'} photo1={'/images/next-js.svg'} width1={'100%'} width2={0} />
       </Link>
 
-      <Link href={'/vueJs'} className='w-[90%]' >
+      <Link href={'/vueJs'} className='w-[90%] md:w-[33%]' >
 
         <Card headerText={'VueJS'} footerText={'Comming soon'} photo1={'/images/vue-js.svg'} width1={'100%'} width2={0} />
       </Link>

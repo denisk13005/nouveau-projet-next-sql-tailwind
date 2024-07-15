@@ -6,6 +6,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  flex-grow: 1;
+  min-height: 88vh;
   @media screen and (max-width : 780px) {
     flex-direction: column;
   }
