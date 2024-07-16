@@ -9,6 +9,9 @@ import styles from './layout.module.scss'
 export const metadata = {
   title: 'find a template for starting dev quickly',
   description: 'This web site provide different template with different technologies for the front end and different type a database',
+  keywords: 'templates, build templates, design web, professionnels templates , réactiv templates ',
+  author: 'dkDevelopment'
+
 }
 
 export default function RootLayout({ children }) {
