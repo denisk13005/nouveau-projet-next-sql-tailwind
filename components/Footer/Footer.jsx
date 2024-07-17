@@ -13,8 +13,10 @@ export default function Footer() {
           </div>
           <div className="md:ml-12">Copyright 2024 - All rights reserved</div>
         </div>
-        <div>
-          Contact
+        <div >
+          <a href="mailto:developpementdk@gmail.com">
+            Contact
+          </a>
         </div>
 
       </div>
