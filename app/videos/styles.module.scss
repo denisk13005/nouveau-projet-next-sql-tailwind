@@ -8,7 +8,7 @@
   justify-content: space-around;
   flex-grow: 1;
   min-height: 88vh;
-  @media screen and (max-width : 780px) {
+  @media screen and (max-width : 1400px) {
     flex-direction: column;
   }
 }
