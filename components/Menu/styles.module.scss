@@ -1,0 +1,37 @@
+.menuContainer {
+  width: 80px;
+  height: 5dvh;
+  background-color: var(--blue);
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px var(--or);
+  border: 1px solid var(--or);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  
+  .linkContainer{
+    width: 80px;
+    position: absolute;
+    border: 1px solid var(--or);
+    top: 6dvh;
+    left: 0;
+    z-index: 1000;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--blue);
+    padding: 5px;
+    
+    a {
+      margin-bottom: 5px;
+    }
+  }
+
+}
+@media screen and (min-width: 760px){
+  .menuContainer {
+height: 4dvh;
+  }
+}

@@ -1,15 +1,10 @@
 'use client'
 import { UseUserContext } from '@/context/UserContext';
 import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Fade from '@mui/material/Fade';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import Link from 'next/link';
 import * as React from 'react';
 
+import Menu from '../Menu/Menu';
 import styles from './styles.module.scss';
-
 
 
 export default function FadeMenu() {
@@ -18,16 +13,20 @@ export default function FadeMenu() {
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
+    document.body.classList.add('no-scroll');
   };
   const handleClose = () => {
     setAnchorEl(null);
+    document.body.classList.remove('no-scroll');
   };
 
   return (
-    <div className='flex justify-between w-full p-3' >
-      <div>
+    <div className='flex justify-between items-center w-full p-3' >
+      <div >
+        <Menu />
 
-        <Button
+
+        {/* <Button
           id={styles.btn}
           aria-controls={open ? 'fade-menu' : undefined}
           aria-haspopup="true"
@@ -83,7 +82,7 @@ export default function FadeMenu() {
 
             <MenuItem onClick={handleClose}>Videos</MenuItem>
           </Link>
-        </Menu>
+        </Menu> */}
       </div>
 
       <Avatar id={styles.avatar} alt="P" src="/static/images/avatar/3.jpg" />

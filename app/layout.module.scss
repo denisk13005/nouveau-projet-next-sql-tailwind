@@ -2,6 +2,29 @@
   background: var(--blue);
   height: 100%;
   color: var(--or);
+  overflow-y: scroll;
+  scrollbar-width: 1px;
+  /* Pour tout élément avec une scrollbar */
+&::-webkit-scrollbar {
+  width: 5px; /* Largeur de la scrollbar verticale */
+}
+
+/* Le track de la scrollbar (fond) */
+&::-webkit-scrollbar-track {
+  background: var(--blue); 
+}
+
+/* La poignée de la scrollbar */
+&::-webkit-scrollbar-thumb {
+  background: var(--or); 
+  border-radius: 10px;
+}
+
+/* Lorsque vous survolez la poignée de la scrollbar */
+&::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
   main{
     max-width: 1440px;
     margin: auto;
