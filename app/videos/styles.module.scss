@@ -8,7 +8,10 @@
   justify-content: space-around;
   flex-grow: 1;
   min-height: 88vh;
+  flex-wrap: wrap;
+  padding: 40px;
   @media screen and (max-width : 1400px) {
     flex-direction: column;
+    padding: 0;
   }
 }
