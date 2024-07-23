@@ -19,6 +19,9 @@ import InputLabel from '@mui/material/InputLabel';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import styles from './styles.module.scss';
 
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
+
 
 
 
@@ -35,6 +38,13 @@ function Form() {
   const [signup, setSignup] = useState(false)
   const [emailError, setEmailError] = useState(false)
   const [emailErrorMsg, setEmailErrorMsg] = useState('')
+  const [open, setOpen] = useState(false)
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const handleOpen = () => {
+    setOpen(true);
+  };
   useEffect(() => {
     console.log(data);
   }, [data])
@@ -47,6 +57,7 @@ function Form() {
       return
     }
     if (signup) {
+      handleOpen()
       const response = await fetch('/api/users/signUp',
         {
           method: 'POST',
@@ -54,17 +65,21 @@ function Form() {
         })
       const user = await response.json()
       if (user.status === 401) {
+        handleClose()
         console.log(user);
         setEmailErrorMsg('bad credential')
         return
       }
       if (user.status === 200) {
+        handleClose()
         console.log(user.newUser);
         setSignup(false)
         console.log(data);
       }
     } else if (!signup) {
       console.log('titi');
+      handleOpen()
+
       const response = await fetch('/api/users/signIn',
         {
           method: 'POST',
@@ -75,11 +90,13 @@ function Form() {
       console.log(user.status, '-------');
 
       if (user.status === 401) {
+        handleClose()
         setEmailErrorMsg('Bad Credentials')
         return
       }
 
       if (user.status === 200) {
+        handleClose()
         setEmailError(false)
         addUser(user.user)
         router.push('/profile')
@@ -150,6 +167,13 @@ function Form() {
 
 
       </Box >
+      <Backdrop
+        sx={{ color: 'var(--blue)', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+        onClick={handleClose}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
 
 
     </div >
