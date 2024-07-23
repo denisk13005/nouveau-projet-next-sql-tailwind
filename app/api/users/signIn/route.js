@@ -1,5 +1,4 @@
-import { query, closeConnection } from "@/lib/connectDb"
-import connection from "@/lib/connectDb";
+import connection, { query } from "@/lib/connectDb";
 import util from 'util';
 const bcrypt = require('bcrypt')
 const queryAsync = util.promisify(query).bind(connection);
@@ -7,11 +6,14 @@ const queryAsync = util.promisify(query).bind(connection);
 async function getUser(email, password) {
   const req = `SELECT * FROM users where email like '${email}'`;
 
+
   // Générer un sel (salt) aléatoire une seule fois
   try {
     const results = await queryAsync(req);
 
-    console.log(results[0].password, 'results');
+    if (!results.length) {
+      return new Response(JSON.stringify({ msg: 'bad credentials', status: 401 }))
+    }
     const mdpOk = await bcrypt.compare(password, results[0].password)
     if (mdpOk) {
       const response = {
@@ -37,7 +39,9 @@ export async function POST(req, res) {
   const { email, password } = await req.json()
 
   const user = await getUser(email, password)
-  console.log(await user, '----');
+  if (!user.email) {
+    return new Response(JSON.stringify({ msg: 'bad credentials', status: 401 }))
+  }
   try {
     return new Response(JSON.stringify({ user: user, status: 200 }))
   } catch (error) {

@@ -1,23 +1,23 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation';
 
 import { UseUserContext } from '@/context/UserContext';
 
 
-import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
+import TextField from '@mui/material/TextField';
 
-import styles from './styles.module.scss'
-import OutlinedInput from '@mui/material/OutlinedInput';
-import InputLabel from '@mui/material/InputLabel';
-import InputAdornment from '@mui/material/InputAdornment';
-import FormControl from '@mui/material/FormControl';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import FormControl from '@mui/material/FormControl';
+import InputAdornment from '@mui/material/InputAdornment';
+import InputLabel from '@mui/material/InputLabel';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import styles from './styles.module.scss';
 
 
 
@@ -72,9 +72,15 @@ function Form() {
         }
       )
       const user = await response.json()
-      console.log(user, '-------');
+      console.log(user.status, '-------');
+
+      if (user.status === 401) {
+        setEmailErrorMsg('Bad Credentials')
+        return
+      }
 
       if (user.status === 200) {
+        setEmailError(false)
         addUser(user.user)
         router.push('/profile')
       }
